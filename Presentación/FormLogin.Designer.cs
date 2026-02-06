@@ -49,7 +49,7 @@
             // 
             // btningresa
             // 
-            this.btningresa.Location = new System.Drawing.Point(342, 404);
+            this.btningresa.Location = new System.Drawing.Point(369, 404);
             this.btningresa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btningresa.Name = "btningresa";
             this.btningresa.Size = new System.Drawing.Size(100, 37);
