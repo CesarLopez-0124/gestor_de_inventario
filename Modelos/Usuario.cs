@@ -8,14 +8,14 @@ namespace gestor_de_inventario.Modelos
 {
     internal class Usuario
     {
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public string ApellidoP {  get; set; }
         public string ApellidoM { get; set; }
         public string Contrasena { get; set; }
 
         public Usuario(string nombre, string apellidoP, string apellidoM, string contrasena)
         {
-            Nombre = nombre;
+            Nombres = nombre;
             ApellidoP = apellidoP;
             ApellidoM = apellidoM;
             Contrasena = contrasena;
