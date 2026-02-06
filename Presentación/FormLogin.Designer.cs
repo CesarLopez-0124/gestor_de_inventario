@@ -1,6 +1,6 @@
 ﻿namespace gestor_de_inventario
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
