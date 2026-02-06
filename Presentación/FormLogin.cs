@@ -36,5 +36,10 @@ namespace gestor_de_inventario
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
