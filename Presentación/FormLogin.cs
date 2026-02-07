@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using gestor_de_inventario.Servicios;
+using gestor_de_inventario.Modelos;
 
 namespace gestor_de_inventario
 {
@@ -37,9 +39,38 @@ namespace gestor_de_inventario
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            string nombres = txtNombres.Text.Trim();
+            string apellidoP = txtApellidoP.Text.Trim();
+            string apellidoM = txtApellidoM.Text.Trim();
+            string contrasena = txtContrasena.Text.Trim();
 
+            // Validar que no estén vacíos
+            if (string.IsNullOrEmpty(nombres) ||
+                string.IsNullOrEmpty(apellidoP) ||
+                string.IsNullOrEmpty(apellidoM) ||
+                string.IsNullOrEmpty(contrasena))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
+
+            ServicioLogin servicio = new ServicioLogin();
+            Usuario usuarioValido = servicio.Validar(nombres, apellidoP, apellidoM, contrasena);
+
+            if (usuarioValido != null)
+            {
+                MessageBox.Show("Bienvenido " + usuarioValido.Nombres);
+
+                FormInventario inventario = new FormInventario();
+                inventario.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Datos incorrectos.");
+            }
         }
     }
 }

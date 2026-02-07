@@ -12,7 +12,16 @@ namespace gestor_de_inventario.Servicios
     {
         private List<Usuario> usuarios = new List<Usuario>()
         {
-
+            new Usuario("Cesar", "Lopez", "Lopez", "admin"),
+            new Usuario("Alberto", "Gonzalez", "Garibaldi", "admin1"),
+            new Usuario("Roman", "Gonzalez", "Garcia", "admin2")
         };
+
+        public Usuario Validar(string nombres, string apellidoP, string apellidoM, string contrasena)
+        {
+            return usuarios.FirstOrDefault(u =>
+                u.Nombres.Equals(nombres, System.StringComparison.OrdinalIgnoreCase)
+            );
+        }
     }
 }
