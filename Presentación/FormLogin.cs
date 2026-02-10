@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using gestor_de_inventario.Servicios;
 using gestor_de_inventario.Modelos;
+using System.IO;
 
 namespace gestor_de_inventario
 {
@@ -70,6 +71,26 @@ namespace gestor_de_inventario
             else
             {
                 MessageBox.Show("Datos incorrectos.");
+            }
+        }
+
+        private void txtNombres_TextChanged(object sender, EventArgs e)
+        {
+            string nombre = txtNombres.Text.Trim().ToLower();
+
+            // Application.StartupPath nos dice dónde está corriendo el programa (Debug/bin)
+            // "Imagenes" es la carpeta que creamos.
+            string rutaImagen = Path.Combine(Application.StartupPath, "Imagenes", nombre + ".jpg");
+            
+
+
+            if (File.Exists(rutaImagen) )
+            {
+                imgfoto.Image = Image.FromFile(rutaImagen);
+            }
+            else
+            {
+                imgfoto.Image = null; // O una imagen por defecto
             }
         }
     }
