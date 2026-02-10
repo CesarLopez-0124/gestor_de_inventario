@@ -14,7 +14,8 @@ namespace gestor_de_inventario.Servicios
         {
             new Usuario("Cesar", "Lopez", "Lopez", "admin"),
             new Usuario("Alberto", "Gonzalez", "Garibaldi", "admin1"),
-            new Usuario("Roman", "Gonzalez", "Garcia", "admin2")
+            new Usuario("Roman", "Gonzalez", "Garcia", "admin2"),
+            new Usuario("Alejandro", "Gonzalez", "De santiago","admin3")
         };
 
         public Usuario Validar(string nombres, string apellidoP, string apellidoM, string contrasena)
